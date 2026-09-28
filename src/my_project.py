@@ -27,15 +27,6 @@ def is_plain_login(login: str) -> bool:
 
 
 def validate_registration(login: str, password: str, confirm: str):
-    # --- ИСПРАВЛЕНИЕ БАГА: Добавлена проверка типов, чтобы избежать падения программы ---
-    if not isinstance(login, str):
-        return False, "Логин должен быть строкой"
-    if not isinstance(password, str):
-        return False, "Пароль должен быть строкой"
-    if not isinstance(confirm, str):
-        return False, "Подтверждение пароля должно быть строкой"
-    # ---------------------------------------------------------------------------------
-
     if not login:
         return False, "Логин не может быть пустым"
 
