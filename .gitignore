@@ -1,8 +1,8 @@
 venv/
-src/utils/
+src/utils/some_page.html
 
 __pycache__/
 *.pyc
 *.db
 .env
-.idea
+.idea/
