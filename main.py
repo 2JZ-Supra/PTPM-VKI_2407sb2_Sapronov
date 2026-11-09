@@ -11,16 +11,16 @@ def main():
 
     parser = ForumParser()
 
-    BASE_URL = "https://www.woman.ru/forum/"
-    PAGES_TO_SCRAPE = 1
+    base_url = "https://www.woman.ru/forum/"
+    pages_to_scrape = 1
 
     all_thread_urls = set()
 
-    for page_num in range(1, PAGES_TO_SCRAPE + 1):
+    for page_num in range(1, pages_to_scrape + 1):
         if page_num == 1:
-            url = f"{BASE_URL}?sort=new"
+            url = f"{base_url}?sort=new"
         else:
-            url = f"{BASE_URL}{page_num}/?sort=new"
+            url = f"{base_url}{page_num}/?sort=new"
 
         print(f"\nПолучаем список тем со страницы {page_num}: {url}")
         urls = parser.get_thread_urls(url)

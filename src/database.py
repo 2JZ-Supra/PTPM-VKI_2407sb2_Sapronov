@@ -34,6 +34,11 @@ class DatabaseRepository:
         rows = cursor.fetchall()
         return [{"id": r["id"], "name": r["name"], "message": r["message"]} for r in rows]
 
+    def get_all(self):
+        cursor = self.conn.execute("SELECT id, name, message FROM comments")
+        rows = cursor.fetchall()
+        return [{"id": r["id"], "name": r["name"], "message": r["message"]} for r in rows]
+
     def add(self, comment_id: int, username: str, message: str) -> bool:
         if not isinstance(comment_id, int) or not isinstance(username, str) or not isinstance(message, str):
             raise TypeError("Неверные типы: comment_id должен быть int, username и message — str")
